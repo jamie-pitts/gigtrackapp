@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+<script>
+function getMobileOperatingSystem() {
+  var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+      // Windows Phone must come first because its UA also contains "Android"
+    if (/windows phone/i.test(userAgent)) {
+        return "Windows Phone";
+    }
+
+    if (/android/i.test(userAgent)) {
+        return "Android";
+    }
+
+    // iOS detection from: http://stackoverflow.com/a/9039885/177710
+    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        return "iOS";
+    }
+
+    return "unknown";
+}</script>
+
+<script>
+function DetectAndServe(){
+    let os = getMobileOperatingSystem();
+    if (os == "Android") {
+        window.location.href = "https://play.google.com/store/apps/details?id=com.jamiepitts.gigtrack"; 
+    } else if (os == "iOS") {
+        window.location.href = "https://apps.apple.com/app/id1561404938#";
+    } else {
+        window.location.href = "https://www.gigtrackapp.com";
+    }
+}
+</script>
+	<title>GigTrack</title>
+</head>
+<body onload="DetectAndServe()">
+	<p>App available on the Apple App Store:</p>
+		<a href='https://apps.apple.com/app/id1561404938#?platform=iphone'><img alt='Android app on Apple App Store' src='images/app-store-badge.png' width="150"/></a>
+	</p>
+	<p>App available on the Google Play Store:</p>
+		<a href='https://play.google.com/store/apps/details?id=com.jamiepitts.gigtrack&utm_source=global_co&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-Other-global-all-co-prtnr-ap-PartBadge-Mar2515-1'><img alt='Android app on Google Play' src='https://play.google.com/intl/en_us/badges/images/apps/en-play-badge.png' width="150"/></a>
+	</p>
+</body>
+</html>
