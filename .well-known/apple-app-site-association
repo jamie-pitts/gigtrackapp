@@ -1,0 +1,15 @@
+{
+  "applinks": {
+      "details": [
+           {
+             "appIDs": [ "WCA754GT7F.com.jamiepitts.GigTrack" ],
+             "components": [
+               {
+                  "/": "/*",
+                  "comment": "Matches any URL on GigTrackApp"
+               }
+             ]
+           }
+       ]
+   }
+}
