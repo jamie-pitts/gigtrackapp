@@ -5,10 +5,6 @@
              "appIDs": [ "WCA754GT7F.com.jamiepitts.GigTrack" ],
              "components": [
                {
-                  "/": "/*",
-                  "comment": "Matches any URL on GigTrackApp"
-               },
-               {
                   "/": "/privacy-policy.html",
                   "exclude": true,
                   "comment": "Don't open privacy-policy.html as a universal link."
@@ -17,6 +13,10 @@
                   "/": "/terms-and-conditions.html",
                   "exclude": true,
                   "comment": "Don't open terms-and-conditions.html as a universal link."
+               },
+               {
+                  "/": "/*",
+                  "comment": "Matches any URL on GigTrackApp"
                }
              ]
            }
